@@ -1,8 +1,8 @@
 # Customize these values
-RESOURCE_GROUP="rg-onlinestore-dev-uksouth-001"
-LOCATION="uksouth"
-AKS_NAME="aks-onlinestore-dev-uksouth-001"
-ACR_NAME="acronlinestoredevuksouth001"
+RESOURCE_GROUP="rg-store-ajk-dev-eastus-001"
+LOCATION="eastus"
+AKS_NAME="aks-store-ajk-dev-eastus-001"
+ACR_NAME="acronlinestoredeveastus001"
 NODE_COUNT=1
 
 # Create a resource group
