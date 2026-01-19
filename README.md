@@ -84,7 +84,7 @@
     6. Clean the Azure resources
 
 # Infra deployment
-
+```bash
     # Login to Azure
 
         az login
@@ -102,8 +102,8 @@
 
     # Connect to cluster
 
-        RESOURCE_GROUP="rg-onlinestore-dev-uksouth-001"
-        AKS_NAME="aks-onlinestore-dev-uksouth-001"
+        RESOURCE_GROUP="rg-store-ajk-dev-eastus-001"
+        AKS_NAME="aks-store-ajk-dev-eastus-001"
         az aks get-credentials --resource-group $RESOURCE_GROUP --name $AKS_NAME
 
     # Short name for kubectl
@@ -111,13 +111,14 @@
     # Show all existing objects
 
         k get all
-
+```
 # Docker Build and Push
-
+```bash
     # Log in to ACR
-
-        ACR_NAME="acronlinestoredevuksouth001"
-        az acr login --name $ACR_NAME
+        ACR_NAME="acronlinestoredeveastus001"
+        # az acr login --name $ACR_NAME
+        az acr credential show --name $ACR_NAME
+        podman login --username $ACR_NAME --password  $(az acr credential show --name $ACR_NAME --query passwords[0].value) $ACR_NAME.azurecr.io
 
     # Build and push the Docker images to ACR
 
@@ -147,4 +148,6 @@
 
 # Clean the Azure resources
 
-    az group delete --name rg-onlinestore-dev-uksouth-001 --yes --no-wait
+    az group delete --name rg-store-ajk-dev-eastus-001 --yes --no-wait
+
+```
