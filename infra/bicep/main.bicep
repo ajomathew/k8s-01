@@ -15,9 +15,9 @@ param location string
 
 var resourceLocator = '${projectName}-${environment}-${location}-${resourceInstance}'
 
-// Netework parameters
-param vnetAddressPrefix string
-param subnets array = []
+// // Netework parameters
+// param vnetAddressPrefix string
+// param subnets array = []
 
 // Parameters for AKS
 @description('The number of nodes for the cluster.')
@@ -26,7 +26,7 @@ param subnets array = []
 param agentCount int = 1
 
 @description('The size of the Virtual Machine.')
-param agentVMSize string = 'Standard_B2s'
+param agentVMSize string
 
 @description('User name for the Linux Virtual Machines.')
 param linuxAdminUsername string = ''

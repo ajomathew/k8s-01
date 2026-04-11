@@ -138,7 +138,8 @@
         docker push $ACR_NAME.azurecr.io/store-front:v1
 
         docker images
-
+# Deploy
+    kubectl apply -f ./manifests
 # Verify the Deployment
 
     k get pods

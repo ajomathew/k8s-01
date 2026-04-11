@@ -24,7 +24,8 @@ az aks create \
   --attach-acr $ACR_NAME \
   --generate-ssh-keys
 
-
+az aks get-credentials --resource-group $RESOURCE_GROUP \
+  --name $AKS_NAME
 
 # # Create AKS Cluster (without ACR integration yet)
 # Create a Kubernetes clusteraz aks create --resource-group $RESOURCE_GROUP \
