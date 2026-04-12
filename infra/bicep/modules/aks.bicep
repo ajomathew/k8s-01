@@ -18,11 +18,11 @@ param agentCount int = 1
 @description('agent vm size for the cluster.')
 param agentVMSize string
 
-@description('user name for the Linux Virtual Machines.')
-param linuxAdminUsername string
-
-@description('agent ssh public key for the cluster.')
-param sshRSAPublicKey string
+// @description('user name for the Linux Virtual Machines.')
+// param linuxAdminUsername string
+//
+// @description('agent ssh public key for the cluster.')
+// param sshRSAPublicKey string
 
 resource aks 'Microsoft.ContainerService/managedClusters@2025-05-01' = {
   name: aksName
