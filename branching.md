@@ -1,3 +1,5 @@
+# Branching Checks
+
 ```mermaid
 gitGraph
 checkout main
