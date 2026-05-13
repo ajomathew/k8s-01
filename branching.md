@@ -4,9 +4,10 @@
 gitGraph
 checkout main
 commit
-branch feature1
+branch feature2
+commit
 commit
 commit
 checkout main
-merge feature1
+merge feature2
  ```
