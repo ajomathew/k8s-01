@@ -1,0 +1,20 @@
+name: Check branch is up-to-date
+on: [pull_request]
+jobs:
+  check-main-merged:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Verify main is merged
+        run: |
+          git fetch origin main
+          BASE=$(git merge-base HEAD origin/main)
+          MAIN=$(git rev-parse origin/main)
+
+          if [ "$BASE" != "$MAIN" ]; then
+            echo "❌ Feature branch is behind main. Merge or rebase main first."
+            exit 1
+          fi
