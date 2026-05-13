@@ -9,4 +9,9 @@ commit
 commit
 checkout main
 merge feature1
+branch feature3
+commit
+commit
+checkout main
+merge feature3
  ```
